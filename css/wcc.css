@@ -327,7 +327,8 @@ body {
 #divSubtitle {
     /*color: #FFFFCC;*/
      color: darkgreen;
-    font-size: 18pt;
+    font-size: 13pt;
+    font-style: italic;
     margin: auto;
     margin-bottom: 20px;
 }
