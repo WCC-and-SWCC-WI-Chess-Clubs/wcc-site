@@ -31,7 +31,7 @@ aws s3 sync "${SCRIPT_DIR}" "${S3_TARGET}" \
   --profile s3_deploy
 
 # Upload content folders
-for FOLDER in css downloads games images js; do
+for FOLDER in css Database downloads games images js; do
   if [ -d "${SCRIPT_DIR}/${FOLDER}" ]; then
     echo "  Syncing ${FOLDER}/..."
     aws s3 sync "${SCRIPT_DIR}/${FOLDER}" "${S3_TARGET}/${FOLDER}" --delete --profile s3_deploy
