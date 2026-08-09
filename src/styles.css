@@ -1,0 +1,1320 @@
+/* ═══════════════════════════════════════════════════════════════════
+   ChessMKE — Unified stylesheet
+   Three sites, three palettes, one file.
+   ═══════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── COLOUR PALETTES ─────────────────────────────────────────────── */
+
+:root {
+  /* ── ChessMKE ROOT (navy / pale-yellow) ── */
+  --mke-color-navy:            #1B2A4A;
+  --mke-color-navy-light:      #2d4a7a;
+  --mke-color-navy-dark:       #121d33;
+  --mke-color-pale-yellow:     #F5F0C0;
+  --mke-color-pale-yellow-dim: #e8e3a8;
+  --mke-color-white:           #FFFFFF;
+  --mke-color-off-white:       #f8f7f0;
+  --mke-color-text-dark:       #1a1a2e;
+  --mke-color-text-muted:      #5a6a8a;
+  --mke-color-card-bg:         #FFFFFF;
+  --mke-color-card-border:     #d8d4b0;
+  --mke-color-stripe:          #fafaf5;
+  --mke-color-online-badge:    #2e5e8e;
+
+  /* ── Southwest Chess Club (green / pale-yellow) ── */
+  --swcc-color-green:            #1B4A2A;
+  --swcc-color-green-light:      #2D6B42;
+  --swcc-color-green-dark:       #112E1A;
+  --swcc-color-pale-yellow:      #F5F0C0;
+  --swcc-color-pale-yellow-dim:  #e8e3a8;
+  --swcc-color-white:            #FFFFFF;
+  --swcc-color-off-white:        #f5f8f5;
+  --swcc-color-text-dark:        #1a2e1e;
+  --swcc-color-text-muted:       #4e7060;
+  --swcc-color-card-bg:          #FFFFFF;
+  --swcc-color-card-border:      #c5d4b8;
+  --swcc-color-stripe:           #f4faf5;
+  --swcc-color-accent:           #C8941A;
+
+  /* ── Waukesha Chess Club (warm brown / pale-yellow) ── */
+  --wcc-color-brown:             #6B4226;
+  --wcc-color-brown-light:       #8B5E3C;
+  --wcc-color-brown-dark:        #3D2512;
+  --wcc-color-pale-yellow:       #F5F0C0;
+  --wcc-color-pale-yellow-dim:   #e8e3a8;
+  --wcc-color-white:             #FFFFFF;
+  --wcc-color-off-white:         #F5F0E8;
+  --wcc-color-text-dark:         #1A1610;
+  --wcc-color-text-muted:        #7A6E5F;
+  --wcc-color-card-bg:           #FFFFFF;
+  --wcc-color-card-border:       rgba(200,148,26,0.25);
+  --wcc-color-stripe:            #fafaf5;
+  --wcc-color-gold:              #C8941A;
+
+  /* ── WCC legacy variables (used by existing WCC components) ── */
+  --cream:       #F5F0E8;
+  --dark:        #3D2512;
+  --gold:        #C8941A;
+  --board-dark:  #3D2512;
+  --board-light: #D4A96A;
+  --text-muted:  #7A6E5F;
+  --card-bg:     #FFFFFF;
+  --border:      rgba(200,148,26,0.25);
+  --nav-h:       100px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   MKE ROOT SITE STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.mke-body {
+  background: var(--mke-color-off-white);
+  color: var(--mke-color-text-dark);
+}
+
+/* ── MKE NAV ── */
+.mke-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(27,42,74,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(245,240,192,0.15);
+}
+.mke-nav-top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 2.5rem;
+  border-bottom: 1px solid rgba(245,240,192,0.1);
+}
+.mke-nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 700;
+  color: var(--mke-color-pale-yellow);
+  display: flex; align-items: baseline; gap: 0.5rem;
+  background: none; border: none; cursor: pointer;
+  text-decoration: none;
+}
+#mke-brand-piece {
+  position: relative; top: -4px;
+}
+#mke-brand-text {
+}
+.mke-nav-links {
+  display: flex; list-style: none;
+  padding: 0 2.5rem; overflow-x: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.mke-nav-links a, .mke-nav-links button {
+  display: block; padding: 0.65rem 0.9rem;
+  text-decoration: none; background: none; border: none; cursor: pointer;
+  color: rgba(245,240,192,0.7);
+  font-size: 0.76rem; font-weight: 500;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.mke-nav-links a:hover, .mke-nav-links button:hover {
+  color: var(--mke-color-pale-yellow);
+}
+.mke-nav-links a.active, .mke-nav-links button.active {
+  color: var(--mke-color-pale-yellow);
+  border-bottom-color: var(--mke-color-pale-yellow);
+}
+.mke-nav-links .mke-nav-external {
+  color: rgba(245,240,192,0.5);
+  font-size: 0.7rem;
+}
+.mke-nav-sub-link {
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--mke-color-pale-yellow-dim);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.mke-nav-sub-link:hover { opacity: 1; }
+
+/* ── MKE PAGE SHELL ── */
+.mke-page-shell { padding-top: 93px; min-height: 100vh; }
+
+/* ── MKE HERO ── */
+.mke-hero {
+  min-height: calc(100vh - 93px);
+  display: grid; grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.mke-hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 4rem 3rem 4rem 4rem;
+  background: var(--mke-color-off-white);
+}
+.mke-hero-eyebrow {
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--mke-color-navy); margin-bottom: 1.25rem;
+  opacity: 0.7;
+}
+.mke-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  line-height: 1.1; font-weight: 700; margin-bottom: 1.5rem;
+  color: var(--mke-color-text-dark);
+}
+.mke-hero-title em {
+  font-style: italic; color: var(--mke-color-navy);
+  display: block;
+}
+.mke-hero-subtitle {
+  font-size: 1rem; color: var(--mke-color-text-muted);
+  max-width: 440px; line-height: 1.75; margin-bottom: 2.5rem;
+}
+.mke-hero-right {
+  background: var(--mke-color-navy);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 3rem 2rem; gap: 2rem;
+  position: relative; overflow: hidden;
+}
+.mke-hero-bg-text {
+  position: absolute; bottom: -0.1em; right: -0.05em;
+  font-family: 'Playfair Display', serif;
+  font-size: 13rem; font-weight: 700;
+  color: rgba(255,255,255,0.04);
+  line-height: 1; user-select: none; pointer-events: none;
+}
+
+/* ── MKE CLUB CARDS ── */
+.mke-clubs-section {
+  padding: 5rem 4rem;
+  background: var(--mke-color-off-white);
+}
+.mke-section-label {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--mke-color-navy); margin-bottom: 0.65rem;
+}
+.mke-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700; line-height: 1.15; margin-bottom: 0.6rem;
+  color: var(--mke-color-text-dark);
+}
+.mke-section-subtitle {
+  color: var(--mke-color-text-muted); font-size: 0.93rem;
+  max-width: 520px; line-height: 1.75; margin-bottom: 2.5rem;
+}
+.mke-clubs-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+}
+.mke-club-card {
+  background: var(--mke-color-card-bg);
+  border: 1px solid var(--mke-color-card-border);
+  padding: 2.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
+}
+.mke-club-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(27,42,74,0.1);
+}
+.mke-club-card-heading {
+  display: flex; align-items: flex-end; gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+.mke-club-card-flag {
+  font-size: 2.5rem; line-height: 1; display: block;
+  /* push the glyph down so its visual bottom aligns with the title baseline */
+  padding-bottom: 0.05em;
+}
+.mke-club-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--mke-color-text-dark); margin-bottom: 0;
+}
+.mke-club-card-sub {
+  font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--mke-color-text-muted); margin-bottom: 1.1rem;
+}
+.mke-club-card-desc {
+  font-size: 0.92rem; color: var(--mke-color-text-muted);
+  line-height: 1.7; margin-bottom: 1.75rem;
+}
+.mke-club-card-detail {
+  display: flex; flex-direction: column; gap: 0.4rem;
+  font-size: 0.83rem; color: var(--mke-color-text-dark);
+  margin-bottom: 2rem;
+}
+.mke-club-card-detail span { opacity: 0.75; }
+.mke-club-card-detail strong { font-weight: 600; opacity: 1; }
+
+/* ── MKE TOOLS SECTION ── */
+.mke-tools-section {
+  padding: 5rem 4rem;
+  background: var(--mke-color-navy);
+  color: var(--mke-color-pale-yellow);
+}
+.mke-tools-section .mke-section-label { color: var(--mke-color-pale-yellow-dim); }
+.mke-tools-section .mke-section-title { color: var(--mke-color-pale-yellow); }
+.mke-tools-section .mke-section-subtitle { color: rgba(245,240,192,0.6); }
+.mke-tool-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(245,240,192,0.15);
+  padding: 2.5rem; max-width: 480px;
+  transition: background 0.2s;
+}
+.mke-tool-card:hover { background: rgba(255,255,255,0.1); }
+.mke-tool-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+.mke-tool-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: var(--mke-color-pale-yellow); margin-bottom: 0.6rem;
+}
+.mke-tool-desc {
+  font-size: 0.9rem; color: rgba(245,240,192,0.65);
+  line-height: 1.7; margin-bottom: 1.5rem;
+}
+
+/* ── MKE BUTTONS ── */
+.mke-btn-primary {
+  background: var(--mke-color-navy); color: var(--mke-color-pale-yellow);
+  border: 2px solid var(--mke-color-navy);
+  padding: 0.85rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+  cursor: pointer; transition: background 0.2s, transform 0.15s;
+  text-decoration: none; display: inline-block;
+}
+.mke-btn-primary:hover {
+  background: var(--mke-color-navy-light);
+  border-color: var(--mke-color-navy-light);
+  transform: translateY(-1px);
+}
+.mke-btn-outline {
+  background: transparent; color: var(--mke-color-navy);
+  border: 2px solid var(--mke-color-navy);
+  padding: 0.85rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+  cursor: pointer; transition: all 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.mke-btn-outline:hover {
+  background: var(--mke-color-navy); color: var(--mke-color-pale-yellow);
+}
+.mke-btn-pale {
+  background: var(--mke-color-pale-yellow); color: var(--mke-color-navy-dark);
+  border: 2px solid var(--mke-color-pale-yellow);
+  padding: 0.85rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+  cursor: pointer; transition: all 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.mke-btn-pale:hover {
+  background: var(--mke-color-pale-yellow-dim);
+  border-color: var(--mke-color-pale-yellow-dim);
+}
+.mke-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ── MKE FOOTER ── */
+.mke-footer {
+  background: var(--mke-color-navy-dark);
+  color: rgba(245,240,192,0.4);
+  text-align: center; padding: 2.5rem;
+  font-size: 0.8rem; line-height: 1.9;
+}
+.mke-footer strong { color: rgba(245,240,192,0.75); font-weight: 500; }
+.mke-footer a { color: var(--mke-color-pale-yellow-dim); text-decoration: none; }
+.mke-footer a:hover { text-decoration: underline; }
+.mke-footer-links {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 0.25rem 0.75rem; margin-top: 0.5rem;
+}
+
+/* ── MKE DIAGRAM PAGE ── */
+.mke-page-hero {
+  background: var(--mke-color-navy); color: var(--mke-color-pale-yellow);
+  padding: 3rem 4rem;
+}
+.mke-page-hero .eyebrow {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--mke-color-pale-yellow-dim); margin-bottom: 0.6rem; opacity: 0.8;
+}
+.mke-page-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+  color: var(--mke-color-pale-yellow);
+}
+.mke-page-inner { max-width: 1100px; margin: 0 auto; padding: 3.5rem 2.5rem; }
+
+/* ── MKE RESPONSIVE ── */
+@media (max-width: 860px) {
+  .mke-page-shell { padding-top: 60px; }
+  .mke-hero { grid-template-columns: 1fr; }
+  .mke-hero-right { min-height: 220px; }
+  .mke-hero-left { padding: 2.5rem 1.5rem; }
+  .mke-clubs-section, .mke-tools-section { padding: 3rem 1.5rem; }
+  .mke-clubs-grid { grid-template-columns: 1fr; }
+  .mke-page-hero { padding: 2rem 1.5rem; }
+  .mke-page-inner { padding: 2rem 1.25rem; }
+  .mke-nav-links { display: none; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   SWCC SUB-SITE STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.swcc-body {
+  background: var(--swcc-color-off-white);
+  color: var(--swcc-color-text-dark);
+}
+
+/* ── SWCC NAV ── */
+.swcc-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(27,74,42,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(245,240,192,0.15);
+}
+.swcc-nav-top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 2.5rem;
+  border-bottom: 1px solid rgba(245,240,192,0.1);
+}
+.swcc-nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--swcc-color-pale-yellow);
+  display: flex; align-items: flex-end; gap: 0.5rem;
+  background: none; border: none; cursor: pointer;
+  text-decoration: none;
+}
+.swcc-nav-links {
+  display: flex; list-style: none;
+  padding: 0 2.5rem;
+  overflow: visible;   /* must be visible so dropdown menus aren't clipped */
+  scrollbar-width: none;
+}
+.swcc-nav-links a, .swcc-nav-links button {
+  display: block; padding: 0.65rem 0.9rem;
+  text-decoration: none; background: none; border: none; cursor: pointer;
+  color: rgba(245,240,192,0.7);
+  font-size: 0.76rem; font-weight: 500;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.swcc-nav-links a:hover, .swcc-nav-links button:hover {
+  color: var(--swcc-color-pale-yellow);
+}
+.swcc-nav-links a.active, .swcc-nav-links button.active {
+  color: var(--swcc-color-pale-yellow);
+  border-bottom-color: var(--swcc-color-pale-yellow);
+}
+.swcc-back-link {
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(245,240,192,0.5);
+  text-decoration: none; transition: color 0.2s;
+}
+.swcc-back-link:hover { color: var(--swcc-color-pale-yellow); }
+
+/* ── SWCC PAGE SHELL ── */
+.swcc-page-shell { padding-top: 93px; min-height: 100vh; }
+
+/* ── SWCC HERO ── */
+.swcc-hero {
+  background: var(--swcc-color-green);
+  color: var(--swcc-color-pale-yellow);
+  padding: 5rem 4rem 4rem;
+  position: relative; overflow: hidden;
+}
+.swcc-hero-bg-text {
+  position: absolute; bottom: -0.1em; right: -0.05em;
+  font-family: 'Playfair Display', serif;
+  font-size: 12rem; font-weight: 700;
+  color: rgba(255,255,255,0.04);
+  line-height: 1; user-select: none; pointer-events: none;
+}
+.swcc-hero-eyebrow {
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(245,240,192,0.6); margin-bottom: 1rem;
+}
+.swcc-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.1; font-weight: 700; margin-bottom: 1rem;
+}
+.swcc-hero-title em { display: block; font-style: italic; opacity: 0.8; }
+.swcc-hero-subtitle {
+  font-size: 1rem; color: rgba(245,240,192,0.7);
+  max-width: 500px; line-height: 1.75; margin-bottom: 2rem;
+}
+.swcc-hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(245,240,192,0.15);
+}
+.swcc-hero-block { padding: 1.75rem 0 0; }
+.swcc-hero-block:first-child { padding-right: 2rem; border-right: 1px solid rgba(245,240,192,0.15); }
+.swcc-hero-block:last-child { padding-left: 2rem; }
+.swcc-hero-block-label {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(245,240,192,0.5); margin-bottom: 0.6rem;
+}
+.swcc-hero-block-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; margin-bottom: 0.3rem;
+}
+.swcc-hero-block-detail {
+  font-size: 0.87rem; color: rgba(245,240,192,0.6);
+  line-height: 1.7;
+}
+.swcc-hero-block-detail a { color: var(--swcc-color-pale-yellow-dim); text-decoration: none; }
+.swcc-hero-block-detail a:hover { text-decoration: underline; }
+.swcc-time-row { display: flex; gap: 2.5rem; margin-top: 0.5rem; }
+.swcc-time-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem; line-height: 1;
+}
+.swcc-time-lbl {
+  font-size: 0.7rem; color: rgba(245,240,192,0.45);
+  letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;
+}
+.swcc-hero-cta { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ── SWCC SECTION SHARED ── */
+.swcc-section-label {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--swcc-color-green); margin-bottom: 0.65rem;
+}
+.swcc-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: 700; line-height: 1.15; margin-bottom: 0.5rem;
+  color: var(--swcc-color-text-dark);
+}
+.swcc-section-subtitle {
+  color: var(--swcc-color-text-muted); font-size: 0.93rem;
+  max-width: 520px; line-height: 1.75; margin-bottom: 2rem;
+}
+.swcc-page-inner { max-width: 960px; margin: 0 auto; padding: 3.5rem 2.5rem; }
+.swcc-page-inner.wide { max-width: 1100px; }
+
+/* ── SWCC SCHEDULE ── */
+.swcc-schedule-section { padding: 4rem; background: var(--swcc-color-off-white); }
+.swcc-sched-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.swcc-sched-table th {
+  text-align: left; font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--swcc-color-green); padding: 0.5rem 1rem 0.5rem 0;
+  border-bottom: 2px solid var(--swcc-color-card-border);
+}
+.swcc-sched-table td {
+  padding: 0.8rem 1rem 0.8rem 0;
+  border-bottom: 1px solid rgba(197,212,184,0.4);
+  vertical-align: top;
+}
+.swcc-sched-table td:first-child { white-space: nowrap; font-weight: 500; min-width: 120px; }
+.swcc-sched-table tr:last-child td { border-bottom: none; }
+.swcc-sched-table tr.highlight td { color: var(--swcc-color-accent); font-weight: 600; }
+.swcc-sched-table tr.note td { opacity: 0.5; font-style: italic; }
+
+/* ── SWCC CHAMPION ── */
+.swcc-champion-section { padding: 4rem; background: #f0f5f0; }
+.swcc-champion-card {
+  background: var(--swcc-color-card-bg);
+  border: 1px solid var(--swcc-color-card-border);
+  padding: 2rem; max-width: 480px;
+  position: relative; overflow: hidden;
+}
+.swcc-champion-card::before {
+  content: '♛'; position: absolute; top: -0.5rem; right: 1rem;
+  font-size: 6rem; color: rgba(27,74,42,0.05); line-height: 1;
+}
+.swcc-champ-label {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--swcc-color-green); margin-bottom: 0.4rem;
+}
+.swcc-champ-event { font-size: 0.82rem; color: var(--swcc-color-text-muted); margin-bottom: 0.4rem; }
+.swcc-champ-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; font-weight: 700; color: var(--swcc-color-text-dark);
+}
+
+/* ── SWCC TOURNAMENT CARD ── */
+.swcc-tournament-section { padding: 4rem; background: var(--swcc-color-green); color: var(--swcc-color-pale-yellow); }
+.swcc-tournament-section .swcc-section-label { color: rgba(245,240,192,0.6); }
+.swcc-tournament-section .swcc-section-title { color: var(--swcc-color-pale-yellow); }
+.swcc-tourn-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(245,240,192,0.2);
+  max-width: 720px;
+}
+.swcc-tourn-table { width: 100%; border-collapse: collapse; }
+.swcc-tourn-table td {
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid rgba(245,240,192,0.1);
+  font-size: 0.88rem;
+}
+.swcc-tourn-table tr:last-child td { border-bottom: none; }
+.swcc-tourn-table td:first-child {
+  color: rgba(245,240,192,0.55);
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  width: 180px; vertical-align: top; padding-top: 0.85rem;
+}
+.swcc-tourn-table a { color: var(--swcc-color-pale-yellow-dim); text-decoration: none; }
+.swcc-tourn-table a:hover { text-decoration: underline; }
+
+/* ── SWCC BUTTONS ── */
+.swcc-btn-primary {
+  background: var(--swcc-color-pale-yellow); color: var(--swcc-color-green-dark);
+  border: 2px solid var(--swcc-color-pale-yellow);
+  padding: 0.85rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+  cursor: pointer; transition: all 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.swcc-btn-primary:hover {
+  background: var(--swcc-color-pale-yellow-dim);
+  border-color: var(--swcc-color-pale-yellow-dim);
+  transform: translateY(-1px);
+}
+.swcc-btn-outline-light {
+  background: transparent; color: var(--swcc-color-pale-yellow);
+  border: 2px solid rgba(245,240,192,0.4);
+  padding: 0.85rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+  cursor: pointer; transition: all 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.swcc-btn-outline-light:hover {
+  border-color: var(--swcc-color-pale-yellow);
+}
+.swcc-btn-green {
+  background: var(--swcc-color-green); color: var(--swcc-color-pale-yellow);
+  border: 2px solid var(--swcc-color-green);
+  padding: 0.85rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+  cursor: pointer; transition: all 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.swcc-btn-green:hover {
+  background: var(--swcc-color-green-light);
+  border-color: var(--swcc-color-green-light);
+  transform: translateY(-1px);
+}
+.swcc-text-link {
+  color: var(--swcc-color-green); text-decoration: none;
+  font-size: 0.85rem; font-weight: 500;
+}
+.swcc-text-link:hover { text-decoration: underline; }
+
+/* ── SWCC FOOTER ── */
+.swcc-footer {
+  background: var(--swcc-color-green-dark);
+  color: rgba(245,240,192,0.4);
+  text-align: center; padding: 2.5rem;
+  font-size: 0.8rem; line-height: 1.9;
+}
+.swcc-footer strong { color: rgba(245,240,192,0.75); font-weight: 500; }
+.swcc-footer a { color: var(--swcc-color-pale-yellow-dim); text-decoration: none; }
+.swcc-footer a:hover { text-decoration: underline; }
+.swcc-footer-links {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 0.25rem 0.75rem; margin-top: 0.5rem;
+}
+
+/* ── SWCC NAV DROPDOWN ── */
+.swcc-nav-dropdown { position: relative; }
+.swcc-nav-dropdown-menu {
+  display: none;
+  position: absolute; top: 100%; left: 0;
+  background: var(--swcc-color-green-dark);
+  border: 1px solid rgba(245,240,192,0.18);
+  border-top: 2px solid var(--swcc-color-pale-yellow);
+  min-width: 160px; z-index: 400;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.swcc-nav-dropdown:hover .swcc-nav-dropdown-menu,
+.swcc-nav-dropdown:focus-within .swcc-nav-dropdown-menu { display: block; }
+.swcc-nav-dropdown-menu button {
+  display: block; width: 100%; text-align: left;
+  padding: 0.7rem 1.1rem;
+  background: none; border: none; cursor: pointer;
+  color: rgba(245,240,192,0.75);
+  font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+  font-weight: 500; letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(245,240,192,0.08);
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.swcc-nav-dropdown-menu button:last-child { border-bottom: none; }
+.swcc-nav-dropdown-menu button:hover,
+.swcc-nav-dropdown-menu button.active {
+  background: rgba(245,240,192,0.08);
+  color: var(--swcc-color-pale-yellow);
+}
+.swcc-nav-dropdown-caret { font-size: 0.6em; opacity: 0.7; margin-left: 0.3em; }
+
+/* ── SWCC PAGE BANNER ── */
+.swcc-page-banner {
+  background: var(--swcc-color-green);
+  color: var(--swcc-color-pale-yellow);
+  padding: 3rem 4rem 2.5rem;
+  position: relative; overflow: hidden;
+}
+.swcc-page-banner::after {
+  content: '♟';
+  position: absolute; bottom: -0.15em; right: -0.05em;
+  font-family: 'Playfair Display', serif;
+  font-size: 9rem; font-weight: 700;
+  color: rgba(245,240,192,0.05);
+  line-height: 1; pointer-events: none; user-select: none;
+}
+.swcc-page-banner .swcc-section-label { color: rgba(245,240,192,0.6); margin-bottom: 0.4rem; }
+.swcc-page-banner .swcc-section-title { color: var(--swcc-color-pale-yellow); margin-bottom: 0; }
+.swcc-page-banner-sub {
+  color: rgba(245,240,192,0.6); font-size: 0.9rem;
+  margin-top: 0.5rem; line-height: 1.6;
+}
+
+/* ── SWCC CHAMPIONS PAGE ── */
+.swcc-champions-table { width: 100%; border-collapse: collapse; }
+.swcc-champions-table th {
+  text-align: left; padding: 0.6rem 1rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--swcc-color-text-muted);
+  border-bottom: 2px solid var(--swcc-color-card-border);
+}
+.swcc-champions-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--swcc-color-card-border);
+  font-size: 0.9rem;
+}
+.swcc-champions-table tr.current td { font-weight: 600; color: var(--swcc-color-green); }
+.swcc-champions-table tr.spacer td { border-bottom: none; padding: 0.35rem 0; }
+.swcc-champions-table tr:last-child td { border-bottom: none; }
+.swcc-champ-year { font-variant-numeric: tabular-nums; font-weight: 500; min-width: 60px; }
+
+/* ── SWCC TOURNAMENTS PAGE ── */
+.swcc-tourney-year-section { margin-bottom: 2.5rem; }
+.swcc-tourney-year-header { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--swcc-color-green); padding: 0.5rem 0; border-bottom: 2px solid var(--swcc-color-card-border); margin-bottom: 0.75rem; }
+.swcc-tourney-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.35rem; }
+.swcc-tourney-list li a { display: block; font-size: 0.87rem; color: var(--swcc-color-text-dark); text-decoration: none; padding: 0.45rem 0.75rem; border-left: 2px solid rgba(27,74,42,0.2); transition: border-color 0.15s, color 0.15s; }
+.swcc-tourney-list li a:hover { border-left-color: var(--swcc-color-green); color: var(--swcc-color-green); }
+
+/* ── SWCC PERSONALITIES PAGE ── */
+.swcc-persons-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem; margin-top: 2rem;
+}
+.swcc-person-card {
+  background: var(--swcc-color-card-bg);
+  border: 1px solid var(--swcc-color-card-border);
+  padding: 1.75rem 1.5rem 1.5rem;
+  text-align: center;
+}
+.swcc-person-card img {
+  width: 140px; height: 140px; object-fit: cover;
+  border-radius: 50%; border: 3px solid var(--swcc-color-green);
+  margin-bottom: 1rem;
+  display: block; margin-left: auto; margin-right: auto;
+}
+.swcc-person-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--swcc-color-text-dark); margin-bottom: 0.25rem;
+}
+.swcc-person-role {
+  font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--swcc-color-text-muted);
+}
+
+/* ── SWCC CONTACT TABLE ── */
+.swcc-contact-table { width: 100%; border-collapse: collapse; }
+.swcc-contact-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--swcc-color-card-border);
+  font-size: 0.9rem; vertical-align: middle;
+}
+.swcc-contact-table tr:last-child td { border-bottom: none; }
+.swcc-contact-table td:first-child { font-weight: 500; }
+.swcc-contact-table a { color: var(--swcc-color-green); text-decoration: none; }
+.swcc-contact-table a:hover { text-decoration: underline; }
+
+/* ── SWCC BOOK LIST ── */
+.swcc-book-search {
+  width: 100%; max-width: 480px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--swcc-color-card-border);
+  background: var(--swcc-color-card-bg);
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+  color: var(--swcc-color-text-dark);
+  margin-bottom: 2rem; outline: none;
+  transition: border-color 0.2s;
+}
+.swcc-book-search:focus { border-color: var(--swcc-color-green); }
+.swcc-book-category { margin-bottom: 2.5rem; }
+.swcc-book-category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 700;
+  color: var(--swcc-color-green);
+  border-bottom: 2px solid var(--swcc-color-green);
+  padding-bottom: 0.4rem; margin-bottom: 0.75rem;
+}
+.swcc-book-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.swcc-book-table th {
+  text-align: left; padding: 0.5rem 0.75rem;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--swcc-color-text-muted);
+  border-bottom: 2px solid var(--swcc-color-card-border);
+  background: var(--swcc-color-stripe);
+}
+.swcc-book-table td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid var(--swcc-color-card-border);
+  vertical-align: top; line-height: 1.4;
+}
+.swcc-book-table tr:last-child td { border-bottom: none; }
+.swcc-book-table td.box { text-align: center; color: var(--swcc-color-text-muted); font-variant-numeric: tabular-nums; }
+.swcc-book-count { font-size: 0.78rem; color: var(--swcc-color-text-muted); margin-bottom: 0.4rem; }
+
+/* ── SWCC DVD LIST ── */
+.swcc-dvd-item {
+  border: 1px solid var(--swcc-color-card-border);
+  background: var(--swcc-color-card-bg);
+  margin-bottom: 1rem; overflow: hidden;
+}
+.swcc-dvd-header {
+  padding: 0.9rem 1.25rem;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  cursor: pointer;
+  border-left: 3px solid var(--swcc-color-green);
+  transition: background 0.15s;
+}
+.swcc-dvd-header:hover { background: var(--swcc-color-stripe); }
+.swcc-dvd-title { font-size: 0.92rem; font-weight: 600; color: var(--swcc-color-text-dark); }
+.swcc-dvd-meta { font-size: 0.78rem; color: var(--swcc-color-text-muted); margin-top: 0.15rem; }
+.swcc-dvd-body {
+  padding: 0.9rem 1.25rem 1rem 1.4rem;
+  font-size: 0.85rem; line-height: 1.7;
+  color: var(--swcc-color-text-dark);
+  border-top: 1px solid var(--swcc-color-card-border);
+  background: var(--swcc-color-off-white);
+}
+
+/* ── SWCC HISTORY PAGE ── */
+.swcc-history-meta {
+  font-size: 0.82rem; color: var(--swcc-color-text-muted);
+  margin-bottom: 2.5rem; line-height: 1.6;
+}
+.swcc-history-toc {
+  background: var(--swcc-color-stripe);
+  border: 1px solid var(--swcc-color-card-border);
+  border-left: 3px solid var(--swcc-color-green);
+  padding: 1.5rem 2rem; margin-bottom: 3rem;
+}
+.swcc-history-toc h3 {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--swcc-color-text-muted);
+  margin-bottom: 0.75rem;
+}
+.swcc-history-toc ol { margin: 0; padding-left: 1.25rem; }
+.swcc-history-toc li { margin-bottom: 0.3rem; }
+.swcc-history-toc a { color: var(--swcc-color-green); text-decoration: none; font-size: 0.88rem; }
+.swcc-history-toc a:hover { text-decoration: underline; }
+.swcc-history-chapter { margin-bottom: 3.5rem; }
+.swcc-history-chapter-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--swcc-color-green);
+  border-bottom: 1px solid var(--swcc-color-card-border);
+  padding-bottom: 0.5rem; margin-bottom: 1.25rem;
+}
+.swcc-history-chapter p { margin-bottom: 1rem; line-height: 1.8; font-size: 0.93rem; }
+.swcc-history-chapter .fallen-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.swcc-history-chapter .fallen-table td {
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid var(--swcc-color-card-border);
+  font-size: 0.88rem;
+}
+.swcc-history-chapter .fallen-table tr:last-child td { border-bottom: none; }
+.swcc-history-chapter .inline-champions { margin: 1rem 0; }
+.swcc-history-chapter .inline-champions td {
+  padding: 0.3rem 0.75rem; font-size: 0.87rem;
+  border-bottom: 1px solid var(--swcc-color-card-border);
+}
+
+/* ── SWCC RESPONSIVE ── */
+@media (max-width: 860px) {
+  .swcc-page-shell { padding-top: 60px; }
+  .swcc-hero { padding: 3rem 1.5rem 2.5rem; }
+  .swcc-hero-grid { grid-template-columns: 1fr; }
+  .swcc-hero-block:first-child { border-right: none; border-bottom: 1px solid rgba(245,240,192,0.15); padding-right: 0; padding-bottom: 1.5rem; }
+  .swcc-hero-block:last-child { padding-left: 0; }
+  .swcc-schedule-section, .swcc-champion-section, .swcc-tournament-section { padding: 2.5rem 1.5rem; }
+  .swcc-page-inner { padding: 2rem 1.25rem; }
+  .swcc-nav-links { display: none; }
+  .swcc-page-banner { padding: 2.5rem 1.5rem 2rem; }
+  .swcc-persons-grid { grid-template-columns: 1fr 1fr; }
+  .swcc-book-table th:last-child, .swcc-book-table td.box { display: none; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   SWCC COLOR THEMES
+   Apply via data-swcc-theme="<name>" on the SWCCApp wrapper div.
+   Each block overrides the CSS custom properties defined in :root
+   for the SWCC palette, plus fixes the few hardcoded rgba values.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Theme: earthy (cream / terracotta / sage · Lora + Nunito) ── */
+[data-swcc-theme="earthy"] {
+  --swcc-color-green:           #5B7A4F;
+  --swcc-color-green-light:     #7A9E6E;
+  --swcc-color-green-dark:      #3A4E34;
+  --swcc-color-pale-yellow:     #F5EDD8;
+  --swcc-color-pale-yellow-dim: #EDE3C8;
+  --swcc-color-white:           #FFFFFF;
+  --swcc-color-off-white:       #FAF5EC;
+  --swcc-color-text-dark:       #3D2B1F;
+  --swcc-color-text-muted:      #7A5C46;
+  --swcc-color-card-bg:         #FFFFFF;
+  --swcc-color-card-border:     #D4BFA0;
+  --swcc-color-stripe:          #F5EEE3;
+  --swcc-color-accent:          #C4603B;
+}
+[data-swcc-theme="earthy"] .swcc-header { background: rgba(91,122,79,0.97); }
+[data-swcc-theme="earthy"] .swcc-champion-section { background: #F0EDE0; }
+/* Lora headings */
+[data-swcc-theme="earthy"] .swcc-nav-brand,
+[data-swcc-theme="earthy"] .swcc-hero-title,
+[data-swcc-theme="earthy"] .swcc-hero-block-main,
+[data-swcc-theme="earthy"] .swcc-time-val,
+[data-swcc-theme="earthy"] .swcc-section-title,
+[data-swcc-theme="earthy"] .swcc-champ-name,
+[data-swcc-theme="earthy"] .swcc-person-name,
+[data-swcc-theme="earthy"] .swcc-book-category-title,
+[data-swcc-theme="earthy"] .swcc-history-chapter-title { font-family: 'Lora', serif; }
+/* Nunito body/UI */
+[data-swcc-theme="earthy"] .swcc-nav-links a,
+[data-swcc-theme="earthy"] .swcc-nav-links button,
+[data-swcc-theme="earthy"] .swcc-nav-dropdown-menu button,
+[data-swcc-theme="earthy"] .swcc-btn-primary,
+[data-swcc-theme="earthy"] .swcc-btn-outline-light,
+[data-swcc-theme="earthy"] .swcc-btn-green,
+[data-swcc-theme="earthy"] .swcc-book-search { font-family: 'Nunito', sans-serif; }
+
+/* ── Theme: midnight (deep navy / antique gold) ── */
+[data-swcc-theme="midnight"] {
+  --swcc-color-green:           #0F1B3A;
+  --swcc-color-green-light:     #1E3163;
+  --swcc-color-green-dark:      #070E1F;
+  --swcc-color-pale-yellow:     #E8D48A;
+  --swcc-color-pale-yellow-dim: #D8C478;
+  --swcc-color-white:           #FFFFFF;
+  --swcc-color-off-white:       #F2EED8;
+  --swcc-color-text-dark:       #0A1020;
+  --swcc-color-text-muted:      #4A5A7A;
+  --swcc-color-card-bg:         #FFFFFF;
+  --swcc-color-card-border:     #B8C0D8;
+  --swcc-color-stripe:          #EEF0F8;
+  --swcc-color-accent:          #D4AF37;
+}
+[data-swcc-theme="midnight"] .swcc-header { background: rgba(15,27,58,0.97); }
+[data-swcc-theme="midnight"] .swcc-champion-section { background: #EBE8F5; }
+
+/* ── Theme: parchment (ink brown / parchment / crimson) ── */
+[data-swcc-theme="parchment"] {
+  --swcc-color-green:           #2C1810;
+  --swcc-color-green-light:     #4A2E20;
+  --swcc-color-green-dark:      #1A0D08;
+  --swcc-color-pale-yellow:     #F4ECD8;
+  --swcc-color-pale-yellow-dim: #EDE2C8;
+  --swcc-color-white:           #FFFFFF;
+  --swcc-color-off-white:       #FAF6EE;
+  --swcc-color-text-dark:       #1A0D08;
+  --swcc-color-text-muted:      #7A5A40;
+  --swcc-color-card-bg:         #FFFFFF;
+  --swcc-color-card-border:     #D4C0A8;
+  --swcc-color-stripe:          #F5EFE3;
+  --swcc-color-accent:          #C84B1A;
+}
+[data-swcc-theme="parchment"] .swcc-header { background: rgba(44,24,16,0.97); }
+[data-swcc-theme="parchment"] .swcc-champion-section { background: #F0EAE0; }
+
+/* ── Theme: slate (slate blue / copper) ── */
+[data-swcc-theme="slate"] {
+  --swcc-color-green:           #2E3A4A;
+  --swcc-color-green-light:     #3E4E60;
+  --swcc-color-green-dark:      #1E2A38;
+  --swcc-color-pale-yellow:     #F2EAD8;
+  --swcc-color-pale-yellow-dim: #E8DEC8;
+  --swcc-color-white:           #FFFFFF;
+  --swcc-color-off-white:       #F5F2EC;
+  --swcc-color-text-dark:       #1E2A38;
+  --swcc-color-text-muted:      #5A6A7A;
+  --swcc-color-card-bg:         #FFFFFF;
+  --swcc-color-card-border:     #C0B8A8;
+  --swcc-color-stripe:          #EFF2F5;
+  --swcc-color-accent:          #B87333;
+}
+[data-swcc-theme="slate"] .swcc-header { background: rgba(46,58,74,0.97); }
+[data-swcc-theme="slate"] .swcc-champion-section { background: #ECF0F5; }
+
+/* ── Theme: burgundy (royal burgundy / champagne / gold) ── */
+[data-swcc-theme="burgundy"] {
+  --swcc-color-green:           #5C1A2E;
+  --swcc-color-green-light:     #7A2840;
+  --swcc-color-green-dark:      #3A0E1C;
+  --swcc-color-pale-yellow:     #F5EDD8;
+  --swcc-color-pale-yellow-dim: #EDE3C8;
+  --swcc-color-white:           #FFFFFF;
+  --swcc-color-off-white:       #FBF5EE;
+  --swcc-color-text-dark:       #2E0E18;
+  --swcc-color-text-muted:      #7A4A5A;
+  --swcc-color-card-bg:         #FFFFFF;
+  --swcc-color-card-border:     #D4B8C0;
+  --swcc-color-stripe:          #FAF0F2;
+  --swcc-color-accent:          #C8A020;
+}
+[data-swcc-theme="burgundy"] .swcc-header { background: rgba(92,26,46,0.97); }
+[data-swcc-theme="burgundy"] .swcc-champion-section { background: #FBF0F2; }
+
+/* ── Theme: cobalt (cobalt blue / ivory / gold) ── */
+[data-swcc-theme="cobalt"] {
+  --swcc-color-green:           #1A3A7A;
+  --swcc-color-green-light:     #2A52AA;
+  --swcc-color-green-dark:      #0E2255;
+  --swcc-color-pale-yellow:     #F5F0E6;
+  --swcc-color-pale-yellow-dim: #EDE6D6;
+  --swcc-color-white:           #FFFFFF;
+  --swcc-color-off-white:       #F8F5EE;
+  --swcc-color-text-dark:       #0E1A3A;
+  --swcc-color-text-muted:      #4A5A8A;
+  --swcc-color-card-bg:         #FFFFFF;
+  --swcc-color-card-border:     #C0CCE8;
+  --swcc-color-stripe:          #EEF2FA;
+  --swcc-color-accent:          #D4921A;
+}
+[data-swcc-theme="cobalt"] .swcc-header { background: rgba(26,58,122,0.97); }
+[data-swcc-theme="cobalt"] .swcc-champion-section { background: #EEF2FA; }
+
+/* ── ColorSchemePicker section ── */
+.swcc-theme-picker-section {
+  padding: 3rem 4rem;
+  background: var(--swcc-color-off-white);
+  border-top: 1px solid var(--swcc-color-card-border);
+}
+.swcc-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.swcc-theme-card {
+  border: 2px solid var(--swcc-color-card-border);
+  background: var(--swcc-color-card-bg);
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  text-align: left;
+}
+.swcc-theme-card:hover {
+  border-color: var(--swcc-color-green);
+}
+.swcc-theme-card.active {
+  border-color: var(--swcc-color-green);
+  box-shadow: 0 0 0 2px var(--swcc-color-green);
+}
+.swcc-theme-swatches {
+  display: flex; gap: 6px; margin-bottom: 0.75rem;
+}
+.swcc-theme-swatch {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+.swcc-theme-card-name {
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--swcc-color-text-dark);
+  margin-bottom: 0.2rem;
+}
+.swcc-theme-card-desc {
+  font-size: 0.74rem; color: var(--swcc-color-text-muted);
+  line-height: 1.4;
+}
+.swcc-theme-card.active .swcc-theme-card-name::after {
+  content: ' ✓';
+  color: var(--swcc-color-green);
+}
+@media (max-width: 860px) {
+  .swcc-theme-picker-section { padding: 2.5rem 1.5rem; }
+  .swcc-theme-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   WCC SUB-SITE STYLES  (existing classes preserved)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── SHARED TYPOGRAPHY (WCC) ── */
+.section-label {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.65rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700; line-height: 1.15; margin-bottom: 0.6rem;
+}
+.section-subtitle {
+  color: var(--text-muted); font-size: 0.93rem;
+  max-width: 520px; line-height: 1.75; margin-bottom: 2rem;
+}
+.text-link {
+  color: var(--gold); text-decoration: none;
+  font-size: 0.85rem; font-weight: 500;
+}
+.text-link:hover { text-decoration: underline; }
+
+/* ── WCC BUTTONS ── */
+.btn-primary {
+  background: var(--dark); color: var(--cream);
+  border: none; padding: 0.85rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+  cursor: pointer; transition: background 0.2s, transform 0.15s;
+  text-decoration: none; display: inline-block;
+}
+.btn-primary:hover { background: var(--board-dark); transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent; color: var(--dark);
+  border: 1.5px solid var(--dark);
+  padding: 0.85rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+  cursor: pointer; transition: all 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.btn-outline:hover { background: var(--dark); color: var(--cream); }
+
+/* ── WCC PAGE SHELL ── */
+.page-shell { padding-top: var(--nav-h); min-height: 100vh; }
+
+.page-hero {
+  background: var(--dark); color: var(--cream);
+  padding: 3rem 4rem;
+}
+.page-hero .eyebrow {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.6rem;
+}
+.page-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+}
+
+.page-inner { max-width: 960px; margin: 0 auto; padding: 3.5rem 2.5rem; }
+.page-inner.wide { max-width: 1100px; }
+
+/* ── WCC FOOTER ── */
+.site-footer {
+  background: #0F0C08; color: rgba(245,240,232,0.4);
+  text-align: center; padding: 2.5rem;
+  font-size: 0.8rem; line-height: 1.9;
+}
+.site-footer strong { color: rgba(245,240,232,0.75); font-weight: 500; }
+.site-footer a { color: var(--gold); text-decoration: none; cursor: pointer; }
+.footer-links {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 0.25rem 0.75rem; margin-top: 0.5rem;
+}
+
+/* ── WCC WHERE STRIP ── */
+.where-strip { background: var(--dark); color: var(--cream); }
+.where-inner { display: grid; grid-template-columns: 1fr 1fr; }
+.where-block { padding: 2.5rem 3.5rem; }
+.where-block:first-child { border-right: 1px solid rgba(200,148,26,0.2); }
+.where-label {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.85rem;
+}
+.where-main { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.35rem; }
+.where-detail { font-size: 0.87rem; color: rgba(245,240,232,0.55); line-height: 1.7; }
+.where-detail a { color: var(--gold); text-decoration: none; }
+.where-detail a:hover { text-decoration: underline; }
+.time-row { display: flex; gap: 2.5rem; margin-top: 0.5rem; }
+.time-val { font-family: 'Playfair Display', serif; font-size: 1.7rem; line-height: 1; }
+.time-lbl { font-size: 0.7rem; color: rgba(245,240,232,0.45); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
+
+/* ── WCC CHAMPION CARD ── */
+.champion-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  padding: 2rem; position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden; cursor: pointer;
+}
+.champion-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(200,148,26,0.1); }
+.champion-card::before {
+  content: '♛'; position: absolute; top: -0.5rem; right: 1rem;
+  font-size: 6rem; color: rgba(200,148,26,0.07); line-height: 1;
+}
+.champ-year { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+.champ-event { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+.champ-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; }
+
+/* ── WCC MEMBERSHIP ── */
+.mem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.mem-card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.75rem 2rem; }
+.mem-card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 1.1rem; }
+.mem-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.6rem 0; border-bottom: 1px solid rgba(200,148,26,0.12); }
+.mem-row:last-child { border-bottom: none; }
+.mem-who { font-size: 0.88rem; color: var(--text-muted); }
+.mem-price { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; }
+.mem-note { font-size: 0.76rem; color: var(--text-muted); margin-top: 0.85rem; line-height: 1.6; padding-top: 0.65rem; border-top: 1px solid rgba(200,148,26,0.15); }
+
+/* ── WCC SCHEDULE ── */
+.sched-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.sched-table th { text-align: left; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); padding: 0.5rem 1rem 0.5rem 0; border-bottom: 2px solid var(--border); }
+.sched-table td { padding: 0.8rem 1rem 0.8rem 0; border-bottom: 1px solid rgba(200,148,26,0.1); vertical-align: top; }
+.sched-table tr:last-child td { border-bottom: none; }
+.sched-table td:first-child { white-space: nowrap; font-weight: 500; min-width: 120px; }
+.sched-table tr.highlight td { color: var(--gold); font-weight: 500; }
+.sched-table tr.note td { opacity: 0.5; font-style: italic; }
+/* ── WCC GAMES & COLLECTIONS ── */
+.games-table td:first-child { white-space: normal; min-width: 0; }
+.games-table th, .games-table td { font-size: 0.82rem; padding: 0.65rem 0.85rem 0.65rem 0; }
+.games-table a { color: var(--gold); text-decoration: none; font-weight: 500; }
+.games-table a:hover { text-decoration: underline; }
+.page-inner p a { color: var(--gold); text-decoration: none; font-weight: 500; }
+.page-inner p a:hover { text-decoration: underline; }
+.scoresheet-box { margin-top: 2.5rem; padding: 1.75rem 2rem; background: var(--card-bg); border: 1px solid var(--border); }
+.scoresheet-box h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 1rem; }
+.scoresheet-box a { display: block; color: var(--gold); text-decoration: none; font-size: 0.9rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(200,148,26,0.12); }
+.scoresheet-box a:last-child { border-bottom: none; }
+.scoresheet-box a:hover { text-decoration: underline; }
+
+/* ── WCC CHAMPIONS TABLE ── */
+.champs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.champs-table th { text-align: left; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); padding: 0.5rem 1rem 0.5rem 0; border-bottom: 2px solid var(--border); }
+.champs-table td { padding: 0.65rem 1rem 0.65rem 0; border-bottom: 1px solid rgba(200,148,26,0.08); vertical-align: top; font-size: 0.88rem; }
+.champs-table tr:last-child td { border-bottom: none; }
+.champs-table td:first-child { font-weight: 700; font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold); white-space: nowrap; width: 60px; }
+.champs-table a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(200,148,26,0.3); }
+.champs-table a:hover { color: var(--gold); }
+.champs-table tr:nth-child(even) td { background: rgba(200,148,26,0.03); }
+.na-cell { color: var(--text-muted); font-style: italic; }
+
+/* ── WCC TOURNAMENTS ── */
+.tourney-year-section { margin-bottom: 2.5rem; }
+.tourney-year-header { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold); padding: 0.5rem 0; border-bottom: 2px solid var(--border); margin-bottom: 0.75rem; }
+.tourney-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.35rem; }
+.tourney-list li a { display: block; font-size: 0.87rem; color: var(--dark); text-decoration: none; padding: 0.45rem 0.75rem; border-left: 2px solid rgba(200,148,26,0.2); transition: border-color 0.15s, color 0.15s; }
+.tourney-list li a:hover { border-left-color: var(--gold); color: var(--gold); }
+
+/* ── WCC LINKS PAGE ── */
+.links-section { margin-bottom: 2.5rem; }
+.links-section h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.link-list { list-style: none; }
+.link-list li { padding: 0.55rem 0; border-bottom: 1px solid rgba(200,148,26,0.1); }
+.link-list li:last-child { border-bottom: none; }
+.link-list a { color: var(--gold); text-decoration: none; font-size: 0.92rem; }
+.link-list a:hover { text-decoration: underline; }
+.tourney-wi-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 0.75rem; }
+.tourney-wi-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(200,148,26,0.1); vertical-align: top; }
+.tourney-wi-table td:first-child { white-space: nowrap; font-weight: 500; color: var(--text-muted); width: 160px; }
+.tourney-wi-table a { color: var(--gold); text-decoration: none; }
+.tourney-wi-table a:hover { text-decoration: underline; }
+
+/* ── WCC ABOUT ── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; align-items: start; }
+.about-prose { font-size: 0.93rem; line-height: 1.85; color: #3a3020; }
+.about-prose p { margin-bottom: 1.1rem; }
+.about-prose a { color: var(--gold); text-decoration: none; }
+.about-prose a:hover { text-decoration: underline; }
+.board-card { background: var(--card-bg); border: 1px solid var(--border); overflow: hidden; }
+.board-card-header { background: var(--dark); color: var(--cream); padding: 1rem 1.5rem; font-family: 'Playfair Display', serif; font-size: 1.05rem; }
+.board-table { width: 100%; border-collapse: collapse; }
+.board-table td { padding: 0.65rem 1.5rem; border-bottom: 1px solid rgba(200,148,26,0.1); font-size: 0.87rem; }
+.board-table tr:last-child td { border-bottom: none; }
+.board-table td:first-child { color: var(--text-muted); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; width: 180px; }
+.board-table td:last-child { font-weight: 500; }
+
+.wcc-hr { height: 1px; margin-bottom: 1rem; border: none; background: var(--border); }
+.wcc-indented-list { margin-left: 35px; }
+
+.contact-box { margin-top: 1.5rem; padding: 1.5rem; background: rgba(200,148,26,0.06); border: 1px solid var(--border); font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+.contact-box a { color: var(--gold); text-decoration: none; font-weight: 500; }
+
+/* ── WCC HERO ── */
+.hero { min-height: calc(100vh - var(--nav-h)); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 4rem 3rem 4rem 4rem; }
+.hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 4vw, 4rem); line-height: 1.1; font-weight: 700; margin-bottom: 1.5rem; }
+.hero-title em { font-style: italic; color: var(--gold); display: block; }
+.hero-subtitle { font-size: 1rem; color: var(--text-muted); max-width: 400px; line-height: 1.75; margin-bottom: 2rem; }
+.hero-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.badge { background: rgba(200,148,26,0.1); border: 1px solid rgba(200,148,26,0.3); color: var(--dark); font-size: 0.78rem; font-weight: 500; padding: 0.4rem 0.85rem; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-right { background: var(--dark); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.board-container { position: relative; width: 320px; height: 320px; }
+.chess-board { display: grid; grid-template-columns: repeat(8,1fr); width: 100%; height: 100%; }
+.sq { aspect-ratio: 1; }
+.sq.light { background: var(--board-light); }
+.sq.dark { background: var(--board-dark); }
+.board-piece { position: absolute; font-size: 2.1rem; line-height: 1; animation: float 4s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.hero-bg-text { position: absolute; bottom: -0.1em; right: -0.05em; font-family: 'Playfair Display', serif; font-size: 13rem; font-weight: 700; color: rgba(255,255,255,0.04); line-height: 1; user-select: none; pointer-events: none; }
+
+/* WCC HOME SECTIONS */
+.home-champions { padding: 4rem; background: var(--cream); }
+.home-champ-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.home-membership { padding: 4rem; background: #EDEAD8; }
+
+/* ── WCC RESPONSIVE ── */
+@media (max-width: 860px) {
+  :root { --nav-h: 60px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { min-height: 240px; }
+  .hero-left { padding: 2.5rem 1.5rem; }
+  .where-inner { grid-template-columns: 1fr; }
+  .where-block:first-child { border-right: none; border-bottom: 1px solid rgba(200,148,26,0.2); }
+  .where-block { padding: 2rem 1.5rem; }
+  .home-champions, .home-membership { padding: 2.5rem 1.5rem; }
+  .mem-grid { grid-template-columns: 1fr; }
+  .page-hero { padding: 2rem 1.5rem; }
+  .page-inner { padding: 2rem 1.25rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .desktop-nav-links { display: none !important; }
+}

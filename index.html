@@ -1,56 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv=Content-Type content="text/html" charset="utf-8">
-    <meta name="keywords"
-          content="waukesha chess club, waukesha chess, milwaukee chess club, milwaukee chess, southeastern wisconsin chess, wisconsin chess, wisconsin rated chess, wisconin chess club, milwaukee chess tournaments"/>
-    <meta name="description"
-          content="Play rated tournament games weekly on Wednesday at this chess club located just West of Milwaukee. Non-rated games available. Separate Junior section for each tournament."/>
-    <link rel="stylesheet" type="text/css" href="css/wcc.css"/>
-    <script type='text/javascript' language='javascript' src='js/jquery-3.4.1.min.js'>
-        <!-- yes, this comment is here on purpose -->
-    </script>
-    <script type='text/javascript' language='javascript'>
-        var mapLink = "https://www.google.com/maps/place/Eagles+Post+453/@43.0234211,-88.2575115,17z/data=!3m1!4b1!4m5!3m4!1s0x8805af487d0e3eb3:0x5fca8ed0f163f288!8m2!3d43.0234211!4d-88.2553228";
-
-        function openMap() {
-            window.open(mapLink, "_blank");
-        }
-    </script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waukesha Chess Club</title>
-</head>
-
-<body>
-<div id="main-container">
-    <script>
-        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        $(function () {
-			if (isDarkMode) {
-	            $("#title").load("headerw.html");
-			} else {
-	            $("#title").load("headerb.html");
-			}
-            $("#menu").load("menu.html");
-            $("#divContent").load("home.html");
-            $("#footer").load("footer.html");
-        });
-    </script>
-
-    <div id="title"></div>
-    <div id="menu"></div>
-    <div id="divContent">
-    </div>
-    <div id="divBottom">
-        <div id="bottomLeft">
-            <span class="bottomLabel">2026 Club Champion</span>
-            <span class="bottomValue">Evan Seghers</span>
-        </div>
-        <div id="bottomRight">
-            <span class="bottomLabel">2026 Waukesha Memorial Champion</span>
-            <span class="bottomValue">Trevor Magness</span>
-        </div>
-    </div>
-</div>
-<div id="footer"></div>
-</body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=Lora:ital,wght@0,600;0,700;1,400&family=Nunito:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
