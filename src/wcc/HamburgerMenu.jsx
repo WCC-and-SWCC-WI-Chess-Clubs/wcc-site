@@ -114,33 +114,19 @@ export default function HamburgerMenu({ currentPage, onNavigate }) {
         ))}
 
         {/* Blog link */}
-        <a
-          href={BLOG_URL} target="_blank" rel="noreferrer"
-          onClick={close}
-          style={{
-            display: 'block', marginTop: '0.5rem', padding: '0.9rem 0',
-            textDecoration: 'none', color: 'var(--gold)',
-            fontSize: '1rem', fontWeight: 500,
-            borderBottom: '1px solid rgba(200,148,26,0.15)',
-          }}
-        >
-          WCC Blog ↗
-        </a>
+        {/*<a*/}
+        {/*  href={BLOG_URL} target="_blank" rel="noreferrer"*/}
+        {/*  onClick={close}*/}
+        {/*  style={{*/}
+        {/*    display: 'block', marginTop: '0.5rem', padding: '0.9rem 0',*/}
+        {/*    textDecoration: 'none', color: 'var(--gold)',*/}
+        {/*    fontSize: '1rem', fontWeight: 500,*/}
+        {/*    borderBottom: '1px solid rgba(200,148,26,0.15)',*/}
+        {/*  }}*/}
+        {/*>*/}
+        {/*  WCC Blog ↗*/}
+        {/*</a>*/}
 
-        {/* Back to hub — real cross-deployment link, not a router Link
-            (this build's basename is /wcc/, so a router Link to "/"
-            would only bounce back to the WCC home page). */}
-        <a
-          href="/"
-          onClick={close}
-          style={{
-            display: 'block', marginTop: '0.5rem', padding: '0.9rem 0',
-            textDecoration: 'none', color: 'rgba(245,240,232,0.4)',
-            fontSize: '0.85rem', fontWeight: 500,
-          }}
-        >
-          ← ChessMKE.org
-        </a>
       </nav>
     </>
   );

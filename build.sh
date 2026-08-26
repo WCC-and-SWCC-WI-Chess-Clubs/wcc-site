@@ -20,11 +20,12 @@ AMPLIFY_APP_ID="d33fjpa788668a"
 AMPLIFY_BRANCH="production"
 AWS_PROFILE="wcc"
 LOCAL_PORT="8080"
+NGINX_HTML="${NGINX_HTML:-/usr/local/nginx/html}"
 
 usage() {
   echo "Usage: $0 [local|docker|aws]"
   echo ""
-  echo "  local   Build frontend and deploy to local nginx (/usr/local/nginx/html)"
+  echo "  local   Build frontend and deploy to local nginx (${NGINX_HTML})"
   echo "  docker  Build fresh Docker image and run it"
   echo "  aws     Build, package, and redeploy to AWS Amplify"
   echo ""

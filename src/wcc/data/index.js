@@ -88,11 +88,13 @@ export const SCHEDULE_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-
 
 export const TOURNAMENTS = {
   '2026': [
+    { name: 'Late Summer Swiss', url: 'https://ratings.uschess.org/event/202608050123' },
+    { name: '2026 WCC Summer Swiss', url: 'https://ratings.uschess.org/event/202607150263' },
     { name: 'Late Spring Swiss', url: 'https://ratings.uschess.org/event/202606170253' },
-    { name: 'WCC Online 10|2 28-Apr', url: 'https://ratings.uschess.org/event/202604280133' },
     { name: 'Spring Swiss', url: 'https://ratings.uschess.org/event/202605130183' },
+    { name: 'WCC Online 10|2 - 28-Apr', url: 'https://ratings.uschess.org/event/202604280133' },
     { name: 'WCC Online Blitz 13-Apr-26', url: 'https://ratings.uschess.org/event/202604130993' },
-    { name: '2026 Club Championship', url: 'https://ratings.uschess.org/event/202604080203' },
+    { name: '2026 WCC Club Championship', url: 'https://ratings.uschess.org/event/202604080203' },
     { name: '44th Annual Waukesha Memorial', url: 'https://ratings.uschess.org/event/202602280803' },
     { name: 'WCC Feb Quad / Ladder', url: 'https://ratings.uschess.org/event/202602250013' },
     { name: 'New Year Swiss', url: 'https://ratings.uschess.org/event/202601280333' },
@@ -163,7 +165,7 @@ export const TOURNAMENTS = {
   ],
   '2021': [
     { name: 'November Swiss', url: 'https://ratings.uschess.org/event/202112011512' },
-    { name: 'Turkey Trot', url: 'https://ratings.uschess.org/event/202111240602' },
+    { name: 'Turkey trot', url: 'https://ratings.uschess.org/event/202111240602' },
     { name: 'October Swiss', url: 'https://ratings.uschess.org/event/202110277282' },
     { name: 'September Swiss', url: 'https://ratings.uschess.org/event/202109223382' },
     { name: 'August Swiss', url: 'https://ratings.uschess.org/event/202108253732' },
@@ -172,6 +174,8 @@ export const TOURNAMENTS = {
     { name: 'Spring Swiss', url: 'https://ratings.uschess.org/event/202106023612' },
     { name: 'Early Spring Swiss', url: 'https://ratings.uschess.org/event/202105055032' },
     { name: 'Landey vs. Mading Match', url: 'https://ratings.uschess.org/event/202105055422' },
+    { name: 'Quad', url: 'https://ratings.uschess.org/event/202104148932' },
+    { name: 'Early Spring', url: 'https://ratings.uschess.org/event/202104079132' },
     { name: 'Late Winter', url: 'https://ratings.uschess.org/event/202103105512' },
     { name: 'Winter Swiss', url: 'https://ratings.uschess.org/event/202102101682' },
   ],
@@ -180,20 +184,24 @@ export const TOURNAMENTS = {
     { name: '39th Waukesha Memorial', url: 'https://ratings.uschess.org/event/202002298482' },
     { name: 'February Swiss', url: 'https://ratings.uschess.org/event/202002192382' },
     { name: 'Winter Swiss', url: 'https://ratings.uschess.org/event/202002128532' },
+    { name: '2019 Early Winter Swiss', url: 'https://ratings.uschess.org/event/202001152402' },
   ],
   '2019': [
     { name: 'Late Fall Swiss', url: 'https://ratings.uschess.org/event/201912042602' },
+    { name: 'Quick Chess', url: 'https://ratings.uschess.org/event/201910239392' },
     { name: 'Fall Swiss', url: 'https://ratings.uschess.org/event/201910165772' },
     { name: 'Late Summer Swiss', url: 'https://ratings.uschess.org/event/201909180432' },
     { name: 'Summer Swiss', url: 'https://ratings.uschess.org/event/201908217842' },
     { name: 'Early Summer Swiss', url: 'https://ratings.uschess.org/event/201907171932' },
     { name: 'Late Spring Swiss', url: 'https://ratings.uschess.org/event/201906126432' },
+    { name: 'Sprint Swiss', url: 'https://ratings.uschess.org/event/201905080942' },
     { name: '2019 Club Championship', url: 'https://ratings.uschess.org/event/201904032172' },
     { name: 'Early Spring Swiss', url: 'https://ratings.uschess.org/event/201903090422' },
+    { name: 'Late Winter Swiss', url: 'https://ratings.uschess.org/event/201902201142' },
     { name: 'Winter Swiss', url: 'https://ratings.uschess.org/event/201901161012' },
   ],
-  '2018 and earlier': [
-    { name: 'View full archive on USCF →', url: 'https://ratings.uschess.org/affiliate/A5008948' },
+  '2018': [
+    { name: '\'View full archive on USCF →\'', url: 'https://ratings.uschess.org/affiliate/A5008948' },
   ],
 };
 

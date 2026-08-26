@@ -26,18 +26,6 @@ export default function MainNav({ currentPage, onNavigate, mobileSlot }) {
           ♞ Waukesha Chess Club
         </button>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-                <a
-                    href={BLOG_URL} target="_blank" rel="noreferrer"
-                    style={{
-                        display: 'block', padding: '0.8rem 0.9rem 0.5rem 0.9rem',
-                        textDecoration: 'none', color: 'var(--dark)',
-                        fontSize: '0.76rem', fontWeight: 500,
-                        letterSpacing: '0.05em', textTransform: 'uppercase',
-                        whiteSpace: 'nowrap', borderBottom: '2px solid transparent',
-                    }}
-                >
-                    WCC Blog ↗
-                </a>
               {mobileSlot}
             </div>
       </div>
@@ -85,6 +73,20 @@ export default function MainNav({ currentPage, onNavigate, mobileSlot }) {
             )}
           </li>
         ))}
+          <li key="blog" style={{ flexShrink: 0 }}>
+            <a
+              href={BLOG_URL} target="_blank" rel="noreferrer"
+              style={{
+                display: 'block', padding: '0.65rem 0.9rem',
+                textDecoration: 'none', color: 'var(--dark)',
+                fontSize: '0.76rem', fontWeight: 500,
+                letterSpacing: '0.05em', textTransform: 'uppercase',
+                whiteSpace: 'nowrap', borderBottom: '2px solid transparent',
+              }}
+            >
+              WCC Blog ↗
+            </a>
+          </li>
       </ul>
     </header>
   );
