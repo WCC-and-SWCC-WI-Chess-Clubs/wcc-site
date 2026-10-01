@@ -88,13 +88,14 @@ export const SCHEDULE_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-
 
 export const TOURNAMENTS = {
   '2026': [
+    { name: 'Dog Days Of Summer Swiss', url: 'https://ratings.uschess.org/event/202609090083' },
     { name: 'Late Summer Swiss', url: 'https://ratings.uschess.org/event/202608050123' },
-    { name: '2026 WCC Summer Swiss', url: 'https://ratings.uschess.org/event/202607150263' },
+    { name: '2026 Wcc Summer Swiss', url: 'https://ratings.uschess.org/event/202607150263' },
     { name: 'Late Spring Swiss', url: 'https://ratings.uschess.org/event/202606170253' },
     { name: 'Spring Swiss', url: 'https://ratings.uschess.org/event/202605130183' },
-    { name: 'WCC Online 10|2 - 28-Apr', url: 'https://ratings.uschess.org/event/202604280133' },
-    { name: 'WCC Online Blitz 13-Apr-26', url: 'https://ratings.uschess.org/event/202604130993' },
-    { name: '2026 Club Championship', url: 'https://ratings.uschess.org/event/202604080203' },
+    { name: 'Wcc Online 10|2 - 28-Apr', url: 'https://ratings.uschess.org/event/202604280133' },
+    { name: 'Wcc Online Blitz 13-Apr-26', url: 'https://ratings.uschess.org/event/202604130993' },
+    { name: '2026 Wcc Club Championship', url: 'https://ratings.uschess.org/event/202604080203' },
     { name: '44th Annual Waukesha Memorial', url: 'https://ratings.uschess.org/event/202602280803' },
     { name: 'WCC Feb Quad / Ladder', url: 'https://ratings.uschess.org/event/202602250013' },
     { name: 'New Year Swiss', url: 'https://ratings.uschess.org/event/202601280333' },
@@ -201,16 +202,6 @@ export const TOURNAMENTS = {
     { name: 'Winter Swiss', url: 'https://ratings.uschess.org/event/201901161012' },
   ],
   '2018': [
-    { name: 'View full archive on USCF ', url: 'https://ratings.uschess.org/affiliate/A5008948' },
+    { name: 'View full archive on USCF', url: 'https://ratings.uschess.org/affiliate/A5008948' },
   ],
 };
-
-export const BOARD_MEMBERS = [
-  { role: 'President Emeritus', name: 'Jim Nickell' },
-  { role: 'President', name: 'John De Mastri' },
-  { role: 'Vice-President', name: 'Jim Coons' },
-  { role: 'Secretary', name: 'Nick Sloan' },
-  { role: 'Treasurer & Club Grillmeister', name: 'Kevin Klandrud' },
-  { role: 'Member at Large', name: 'Aaron Krause' },
-  { role: 'Member at Large', name: 'Evan Seghers' },
-];
