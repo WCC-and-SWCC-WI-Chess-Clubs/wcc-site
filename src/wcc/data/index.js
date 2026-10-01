@@ -12,6 +12,16 @@ export const NAV_LINKS = [
 
 export const BLOG_URL = 'https://waukeshachessclub.blogspot.com/';
 
+export const BOARD_MEMBERS = [
+  { role: 'President Emeritus', name: 'Jim Nickell' },
+  { role: 'President', name: 'John De Mastri' },
+  { role: 'Vice-President', name: 'Jim Coons' },
+  { role: 'Secretary', name: 'Nick Sloan' },
+  { role: 'Treasurer & Club Grillmeister', name: 'Kevin Klandrud' },
+  { role: 'Member at Large', name: 'Aaron Krause' },
+  { role: 'Member at Large', name: 'Evan Seghers' },
+];
+
 export const CHAMPIONS = [
   { year: '2026', club: { name: 'Evan C Seghers', url: 'https://ratings.uschess.org/event/202604080203' }, mem: { name: 'Trevor S Magness', url: 'https://ratings.uschess.org/event/202602280803' } },
   { year: '2025', club: { name: 'Evan C Seghers', url: 'https://ratings.uschess.org/event/202503267692' }, mem: { name: 'Evan C Seghers · Ojas Sahoo', url: 'https://ratings.uschess.org/event/202502152052' } },
