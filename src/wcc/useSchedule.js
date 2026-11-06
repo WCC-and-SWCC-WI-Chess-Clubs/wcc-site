@@ -121,9 +121,28 @@ function parseDateLoose(str) {
 }
 
 /**
- * Converts raw schedule CSV text into { date, event, highlight, note } rows,
+ * Returns the cell as a URL if it's http(s) (adding https:// to bare
+ * "example.com/..." entries), else ''. Blocks javascript:/data: etc. since
+ * anyone with the form can submit a value.
+ */
+function safeLink(cell) {
+  let s = (cell || '').trim();
+  if (!s) return '';
+  if (!/^[a-z][a-z0-9+.-]*:/i.test(s)) s = `https://${s}`;
+  try {
+    const u = new URL(s);
+    return u.protocol === 'http:' || u.protocol === 'https:' ? u.href : '';
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * Converts raw schedule CSV text into { date, event, link, hoverText,
+ * highlight, note } rows,
  * sorted chronologically. Expects a header row containing "Date", "Event",
  * and "Style" (any order, extra columns like "Timestamp" are ignored).
+ * Optional "Link" and "HoverText" columns add a link icon after the event.
  * Style is "Highlight", "Note", or anything else (treated as neither).
  */
 function parseScheduleCSV(text) {
@@ -135,6 +154,8 @@ function parseScheduleCSV(text) {
     date: header.indexOf('date'),
     event: header.indexOf('event'),
     style: header.indexOf('style'),
+    link: header.indexOf('link'),
+    hoverText: header.indexOf('hovertext'),
   };
 
   // Hide events more than 8 days in the past. Rows we couldn't parse a date
@@ -157,6 +178,8 @@ function parseScheduleCSV(text) {
         // silently dropping the row or showing "Invalid Date".
         date: parsed ? formatDate(parsed) : dateStr,
         event: (r[idx.event] || '').trim(),
+        link: safeLink(idx.link >= 0 ? r[idx.link] : ''),
+        hoverText: idx.hoverText >= 0 ? (r[idx.hoverText] || '').trim() : '',
         highlight: style === 'highlight',
         note: style === 'note',
         _sortKey: parsed ? parsed.getTime() : NaN, // NaN sorts to the end, not the front

@@ -1212,6 +1212,8 @@ body {
 .sched-table td:first-child { white-space: nowrap; font-weight: 500; min-width: 120px; }
 .sched-table tr.highlight td { color: var(--gold); font-weight: 500; }
 .sched-table tr.note td { opacity: 0.5; font-style: italic; }
+.sched-link { color: inherit; text-decoration: none; transition: color 0.15s; }
+.sched-link:hover, .sched-link:focus-visible { color: var(--gold); }
 /* ── WCC GAMES & COLLECTIONS ── */
 .games-table td:first-child { white-space: normal; min-width: 0; }
 .games-table th, .games-table td { font-size: 0.82rem; padding: 0.65rem 0.85rem 0.65rem 0; }

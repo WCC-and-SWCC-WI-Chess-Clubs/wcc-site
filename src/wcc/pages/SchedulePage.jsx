@@ -37,7 +37,21 @@ export default function SchedulePage({ onNavigate }) {
                   className={row.highlight ? 'highlight' : row.note ? 'note' : ''}
                 >
                   <td>{row.date}</td>
-                  <td>{row.event}</td>
+                  <td>
+                    {row.link ? (
+                      <a
+                        className="sched-link"
+                        href={row.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        title={row.hoverText || undefined}
+                      >
+                        {row.event} ↗
+                      </a>
+                    ) : (
+                      row.event
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>
