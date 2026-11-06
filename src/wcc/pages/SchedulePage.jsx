@@ -1,10 +1,26 @@
 // src/wcc/pages/SchedulePage.jsx
+import { useState } from 'react';
 import { SCHEDULE_CSV_URL, BLOG_URL } from '../data/index.js';
 import { useSchedule } from '../useSchedule.js';
 import SiteFooter from '../SiteFooter.jsx';
 
+const DEFAULT_UPCOMING = 10;
+
 export default function SchedulePage({ onNavigate }) {
   const { rows: schedule, error: scheduleError } = useSchedule(SCHEDULE_CSV_URL);
+  const [showAll, setShowAll] = useState(false);
+
+  // Past rows (the few kept for context by useSchedule) always show; only
+  // today-and-later rows are capped. Undated rows count as upcoming.
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const isPast = (row) => !Number.isNaN(row._sortKey) && row._sortKey < today.getTime();
+  const pastRows = schedule ? schedule.filter(isPast) : [];
+  const upcomingRows = schedule ? schedule.filter((r) => !isPast(r)) : [];
+  const visibleRows = [
+    ...pastRows,
+    ...(showAll ? upcomingRows : upcomingRows.slice(0, DEFAULT_UPCOMING)),
+  ];
 
   return (
     <div className="page-shell">
@@ -31,7 +47,7 @@ export default function SchedulePage({ onNavigate }) {
               <tr><th>Date</th><th>Event</th></tr>
             </thead>
             <tbody>
-              {schedule.map((row, i) => (
+              {visibleRows.map((row, i) => (
                 <tr
                   key={i}
                   className={row.highlight ? 'highlight' : row.note ? 'note' : ''}
@@ -57,6 +73,21 @@ export default function SchedulePage({ onNavigate }) {
             </tbody>
           </table>
         </div>
+        )}
+        {schedule && upcomingRows.length > DEFAULT_UPCOMING && (
+          <p className="sched-count">
+            {showAll
+              ? `Showing all ${upcomingRows.length} schedule items.`
+              : 'Showing ten schedule items.'}{' '}
+            <label>
+              Show all?{' '}
+              <input
+                type="checkbox"
+                checked={showAll}
+                onChange={(e) => setShowAll(e.target.checked)}
+              />
+            </label>
+          </p>
         )}
         <div className="scoresheet-box">
           <h3>Scoresheet Downloads</h3>

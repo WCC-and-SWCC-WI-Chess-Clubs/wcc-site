@@ -1212,6 +1212,9 @@ body {
 .sched-table td:first-child { white-space: nowrap; font-weight: 500; min-width: 120px; }
 .sched-table tr.highlight td { color: var(--gold); font-weight: 500; }
 .sched-table tr.note td { opacity: 0.5; font-style: italic; }
+.sched-count { color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem; }
+.sched-count label { cursor: pointer; white-space: nowrap; }
+.sched-count input { accent-color: var(--gold); vertical-align: -0.1em; cursor: pointer; }
 .sched-link { color: inherit; text-decoration: none; transition: color 0.15s; }
 .sched-link:hover, .sched-link:focus-visible { color: var(--gold); }
 /* ── WCC GAMES & COLLECTIONS ── */
