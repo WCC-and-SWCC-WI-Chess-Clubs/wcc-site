@@ -1,4 +1,4 @@
-// src/wcc/pages/LinksPage.jsx
+// src/pages/LinksPage.jsx
 import SiteFooter from '../SiteFooter.jsx';
 
 const CHESS_LINKS = [
@@ -12,15 +12,15 @@ const CHESS_LINKS = [
 const WI_CHESS_LINKS = [
   { label: 'Wisconsin Chess Association', url: 'http://www.wischess.org/' },
   { label: 'WCA — 2025 Wisconsin Tour', url: 'https://www.wischess.org/index.php/past-tournaments/wi-tour/158-current-tour' },
-  { label: 'Southwest Chess Club', url: '/swcc' },
+  { label: 'Southwest Chess Club', url: 'https://www.southwestchessclub.com' },
 ];
 
 const WI_TOURNAMENTS = [
   {
     date: 'October 03, 2026',
-    name: 'Hales Corners Challenge XXXIX (SWCC)',
+    name: 'Hales Corners Challenge XXXIX',
     links: [
-      { label: 'info', url: '/swcc' },
+      { label: 'info', url: 'https://www.southwestchessclub.com' },
       { label: 'register', url: 'https://www.kingregistration.com/event/HCC39' },
     ],
   },

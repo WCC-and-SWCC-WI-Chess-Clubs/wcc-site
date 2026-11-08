@@ -1,4 +1,4 @@
-// src/wcc/data/index.js — Waukesha Chess Club data (ported from wcc sub-project)
+// src/data/index.js — Waukesha Chess Club data (ported from wcc sub-project)
 
 export const NAV_LINKS = [
   { id: 'home',        label: 'Home' },

@@ -1,4 +1,4 @@
-// src/wcc/pages/SchedulePage.jsx
+// src/pages/SchedulePage.jsx
 import { useState } from 'react';
 import { SCHEDULE_CSV_URL, BLOG_URL } from '../data/index.js';
 import { useSchedule } from '../useSchedule.js';

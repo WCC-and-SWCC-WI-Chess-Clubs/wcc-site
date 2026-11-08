@@ -1,4 +1,4 @@
-// src/wcc/MainNav.jsx — Waukesha Chess Club navigation (adapted for unified project)
+// src/MainNav.jsx — Waukesha Chess Club navigation (adapted for unified project)
 import { NAV_LINKS, BLOG_URL } from './data/index.js';
 
 export default function MainNav({ currentPage, onNavigate, mobileSlot }) {

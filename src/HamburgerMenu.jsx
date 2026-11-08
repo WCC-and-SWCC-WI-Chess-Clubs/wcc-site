@@ -1,4 +1,4 @@
-// src/wcc/HamburgerMenu.jsx — WCC mobile hamburger menu
+// src/HamburgerMenu.jsx — WCC mobile hamburger menu
 import { useState } from 'react';
 import { NAV_LINKS, BLOG_URL } from './data/index.js';
 

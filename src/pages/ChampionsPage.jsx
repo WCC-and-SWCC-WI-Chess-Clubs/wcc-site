@@ -1,4 +1,4 @@
-// src/wcc/pages/ChampionsPage.jsx
+// src/pages/ChampionsPage.jsx
 import { CHAMPIONS } from '../data/index.js';
 import SiteFooter from '../SiteFooter.jsx';
 

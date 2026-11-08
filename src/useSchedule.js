@@ -1,6 +1,4 @@
-// src/wcc/useSchedule.js — fetch a club schedule published from Google Sheets as CSV
-// (identical to src/swcc/useSchedule.js — kept as a per-subsite copy to
-// match this project's convention of not sharing code across subsites)
+// src/useSchedule.js — fetch a club schedule published from Google Sheets as CSV
 import { useEffect, useState } from 'react';
 
 // One fetch per URL per page session, shared across every component that

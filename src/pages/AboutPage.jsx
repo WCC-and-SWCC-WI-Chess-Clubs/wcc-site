@@ -1,4 +1,4 @@
-// src/wcc/pages/AboutPage.jsx
+// src/pages/AboutPage.jsx
 import { BOARD_MEMBERS } from '../data/index.js';
 import SiteFooter from '../SiteFooter.jsx';
 

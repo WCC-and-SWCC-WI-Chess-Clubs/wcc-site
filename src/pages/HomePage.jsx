@@ -1,4 +1,4 @@
-// src/wcc/pages/HomePage.jsx
+// src/pages/HomePage.jsx
 import SiteFooter from '../SiteFooter.jsx';
 import wood4 from '../images/wood4.png';
 

@@ -1,7 +1,7 @@
 // src/App.jsx — Waukesha Chess Club (standalone deploy, root of its own webserver)
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
-import WCCApp from './wcc/WCCApp.jsx';
+import WCCApp from './WCCApp.jsx';
 
 // This repo builds and deploys ONLY the WCC site, at the root of its own
 // webserver (vite build --base=/). WCCApp reads its page from the "*"

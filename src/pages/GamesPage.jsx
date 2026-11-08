@@ -1,4 +1,4 @@
-// src/wcc/pages/GamesPage.jsx — ported from the old waukeshachessclub.com/games.html
+// src/pages/GamesPage.jsx — ported from the old waukeshachessclub.com/games.html
 import SiteFooter from '../SiteFooter.jsx';
 
 // Collection files (.2cbv / ChessBase) are served locally from

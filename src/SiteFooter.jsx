@@ -1,4 +1,4 @@
-// src/wcc/SiteFooter.jsx — Waukesha Chess Club footer
+// src/SiteFooter.jsx — Waukesha Chess Club footer
 import { NAV_LINKS, BLOG_URL } from './data/index.js';
 
 export default function SiteFooter({ onNavigate }) {

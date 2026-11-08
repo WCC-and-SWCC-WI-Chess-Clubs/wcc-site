@@ -1,4 +1,4 @@
-// src/wcc/pages/TournamentsPage.jsx
+// src/pages/TournamentsPage.jsx
 import { TOURNAMENTS } from '../data/index.js';
 import SiteFooter from '../SiteFooter.jsx';
 

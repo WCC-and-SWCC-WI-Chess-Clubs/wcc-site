@@ -1,4 +1,4 @@
-// src/wcc/WCCApp.jsx — Waukesha Chess Club sub-site shell
+// src/WCCApp.jsx — Waukesha Chess Club sub-site shell
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import MainNav from './MainNav.jsx';
